@@ -1,11 +1,18 @@
 import java.io.*;
 import java.text.*;
 import java.util.*;
+
+import javax.lang.model.util.ElementScanner14;
 public class StudentList {
 	public static void main(String[] args) {
 
 //		Check arguments
-		if(args[0].equals("a")) {
+       if(args.length !=1)
+	   {
+		   System.out.println("No arguments is passed ");
+		
+		}
+		else if(args[0].equals("a")) {
 			System.out.println("Loading data ...");			
 			try {
 			BufferedReader s = new BufferedReader(
@@ -25,10 +32,10 @@ public class StudentList {
 					new InputStreamReader(
 							new FileInputStream("students.txt"))); 
 			String r = s.readLine();
-			System.out.println(r);
+			//System.out.println(r);
 			String i[] = r.split(",");	
 			Random x = new Random();
-				int y = x.nextInt();
+				int y = Math.abs( x.nextInt()%i.length);
 					System.out.println(i[y]);
 			} catch (Exception e){} 
 			System.out.println("Data Loaded.");			
@@ -57,7 +64,7 @@ public class StudentList {
 					new InputStreamReader(
 							new FileInputStream("students.txt"))); 
 			String r = s.readLine();
-			String i[] = r.split(",");	
+			String i[] = r.split(", ");	
 			boolean done = false;
 			String t = args[0].substring(1);
 			for(int idx = 0; idx<i.length && !done; idx++) {
@@ -91,5 +98,9 @@ public class StudentList {
 			} catch (Exception e){} 
 			System.out.println("Data Loaded.");				
 		}
+	  else 
+	  {
+		System.out.println("Invalid arguments ");
+	  }
 	}
 }
