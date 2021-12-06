@@ -10,7 +10,7 @@ public class StudentList
 	    public static void main(String[] args) 
 		{
            Constant cons = new Constant();
-          //Check arguments
+          //Object class is created for replacing string literals .
            if(args.length !=1)
 	           {
 		   			System.out.println(cons.no_args);
@@ -19,7 +19,7 @@ public class StudentList
 
 		    else if(args[0].equals("a")) 
 			   {
-			        System.out.println(cons.dataload );			
+			        System.out.println(cons.dataload );	//calling constant class using object		
 			    try 
 			       {
 			            BufferedReader reader = new BufferedReader(new InputStreamReader(new FileInputStream("students.txt"))); 
@@ -28,7 +28,7 @@ public class StudentList
 
 			for(String name : names) 
  							{
-				 				 System.out.println(name); 
+				 				 System.out.println(name); //displaying students list from student.txt file
 							}
 				} 
 			        catch (Exception exception)
@@ -37,7 +37,7 @@ public class StudentList
 				} 
 			       System.out.println( cons.loaded);
 		    }
-		    else if(args[0].equals("r")) 
+		    else if(args[0].equals("r")) //this function is using for displaying random name
 		    	{
 			       System.out.println( cons.dataload);			
 					try 
@@ -56,7 +56,7 @@ public class StudentList
 						} 
 			       System.out.println(cons.loaded);			
 		    	}
-		    else if(args[0].contains("+"))
+		    else if(args[0].contains("+")) //this function adds anther name on the list
 				{
 			       System.out.println(cons.dataload);			
 					try
@@ -77,7 +77,7 @@ public class StudentList
 							
 			        System.out.println( cons.loaded);	
 		   	    }
-		    else if(args[0].contains("?")) 
+		    else if(args[0].contains("?")) //this is used for serching a name from the list
 		    	{
 			        System.out.println(cons.dataload);			
 					try 
@@ -134,9 +134,9 @@ public class StudentList
 						} 
 			        System.out.println( cons.loaded);				
 		    }
-	         				else 
+	         				else  //this is used for in case of giving invalid arguments
 	        					{
-		           					 System.out.println(cons.invalid );
+		           					 System.out.println(cons.invalid);
 	       					    }
 	    }
     }
