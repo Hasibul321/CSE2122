@@ -4,20 +4,22 @@ import java.util.*;
 
 //import javax.lang.model.util.ElementScanner14;
 public class StudentList
+
      {
+		
 	    public static void main(String[] args) 
 		{
-
+           Constant cons = new Constant();
           //Check arguments
            if(args.length !=1)
 	           {
-		   			System.out.println("No arguments is passed ");
+		   			System.out.println(cons.no_args);
 		
 		       }
 
 		    else if(args[0].equals("a")) 
 			   {
-			        System.out.println("Loading data ...");			
+			        System.out.println(cons.dataload );			
 			    try 
 			       {
 			            BufferedReader reader = new BufferedReader(new InputStreamReader(new FileInputStream("students.txt"))); 
@@ -33,11 +35,11 @@ public class StudentList
 				{
 
 				} 
-			       System.out.println("Data Loaded.");
+			       System.out.println( cons.loaded);
 		    }
 		    else if(args[0].equals("r")) 
 		    	{
-			       System.out.println("Loading data ...");			
+			       System.out.println( cons.dataload);			
 					try 
 						{
 			      			 BufferedReader reader = new BufferedReader(new InputStreamReader(new FileInputStream("students.txt"))); 
@@ -52,11 +54,11 @@ public class StudentList
 						{
 
 						} 
-			       System.out.println("Data Loaded.");			
+			       System.out.println(cons.loaded);			
 		    	}
 		    else if(args[0].contains("+"))
 				{
-			       System.out.println("Loading data ...");			
+			       System.out.println(cons.dataload);			
 					try
 						{
 			        		BufferedWriter writer = new BufferedWriter(new FileWriter("students.txt", true));
@@ -73,11 +75,11 @@ public class StudentList
 
 						}
 							
-			        System.out.println("Data Loaded.");	
+			        System.out.println( cons.loaded);	
 		   	    }
 		    else if(args[0].contains("?")) 
 		    	{
-			        System.out.println("Loading data ...");			
+			        System.out.println(cons.dataload);			
 					try 
 						{
 			        		BufferedReader reader = new BufferedReader(new InputStreamReader(new FileInputStream("students.txt"))); 
@@ -89,7 +91,7 @@ public class StudentList
 				{
 				if(names[index].equals(arguments))
 				 	{
-					System.out.println("We found it!");
+					System.out.println(cons.found);
 						done=true;
 				 	}
 				}
@@ -98,11 +100,11 @@ public class StudentList
 					{
 
 					} 
-			        System.out.println("Data Loaded.");				
+			        System.out.println(cons.loaded);				
 		    		}
 		    else if(args[0].contains("c")) 
 		    	{
-			        System.out.println("Loading data ...");			
+			        System.out.println(cons.dataload);			
 					try 
 						{
 			       			BufferedReader reader = new BufferedReader(new InputStreamReader(new FileInputStream("students.txt"))); 
@@ -124,17 +126,17 @@ public class StudentList
 								}			
 						}
 				}
-			        System.out.println(count +" word(s) found " + character.length);
+			        System.out.println(count + " word(s) found " + character.length);
 			} 
 					catch (Exception exception)
 						{
 
 						} 
-			        System.out.println("Data Loaded.");				
+			        System.out.println( cons.loaded);				
 		    }
 	         				else 
 	        					{
-		           					 System.out.println("Invalid arguments ");
+		           					 System.out.println(cons.invalid );
 	       					    }
 	    }
     }
